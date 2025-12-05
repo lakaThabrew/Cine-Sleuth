@@ -1,6 +1,6 @@
 # 🎬 CineSleuth
 
-An AI-powered movie guessing game that uses Google's Gemini API to guess the movie you're thinking of by asking yes/no questions.
+An AI-powered movie guessing game that uses Google's Gemini API to guess the movie you're thinking of by asking yes/no questions. Think of it as "20 Questions" for movies!
 
 ## 🎯 How It Works
 
@@ -13,7 +13,9 @@ An AI-powered movie guessing game that uses Google's Gemini API to guess the mov
 
 - **Interactive Gameplay**: The AI asks strategic questions about genre, actors, plot, time period, and more
 - **Smart Guessing**: Uses Gemini 2.0 Flash for intelligent movie detection
+- **Automatic API Key Rotation**: Seamlessly switches to backup API keys when quota is exceeded
 - **Clean Output**: Removes markdown formatting for a better console experience
+- **Game History**: Saves game sessions to `history.txt` for reference
 - **Error Handling**: Comprehensive exception handling for API errors, quota limits, and connectivity issues
 - **Graceful Exit**: Exit anytime by typing 'exit'
 
@@ -27,7 +29,7 @@ An AI-powered movie guessing game that uses Google's Gemini API to guess the mov
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/lakaThabrew/CineSleuth.git
+   git clone https://github.com/lakaThabrew/Cine-Sleuth.git
    cd CineSleuth
    ```
 
@@ -60,20 +62,22 @@ An AI-powered movie guessing game that uses Google's Gemini API to guess the mov
 
    ```
    GEMINI_API_KEY=your_primary_api_key_here
+   NO_of_keys=1
    ```
 
    **Optional: Add backup API keys for automatic failover**
-   
+
    If your primary key's quota is exceeded, CineSleuth will automatically switch to backup keys:
-   
+
    ```
+   NO_of_keys=4
    GEMINI_API_KEY=your_primary_api_key
    GEMINI_API_KEY_2=your_backup_key_2
    GEMINI_API_KEY_3=your_backup_key_3
    GEMINI_API_KEY_4=your_backup_key_4
    ```
-   
-   You can add up to 9 API keys (GEMINI_API_KEY through GEMINI_API_KEY_9).
+
+   Set `NO_of_keys` to the total number of API keys you have configured.
 
 ## 🎮 Usage
 
@@ -115,11 +119,13 @@ pytest test.py --cov=main -v
 
 ```
 CineSleuth/
-├── main.py # Main file with game logic
+├── main.py         # Main with game logic
 ├── test.py           # Unit tests
 ├── requirement.txt   # Python dependencies
 ├── Makefile          # Build automation
-├── .env       # API key (create this file)
+├── history.txt   # Game history (auto-generated)
+├── .env           # API keys (create this file)
+|── .env.example
 └── README.md         # This file
 ```
 
@@ -133,13 +139,13 @@ CineSleuth/
 
 The application handles various error scenarios:
 
-| Error                   | Description                                      |
-| ----------------------- | ------------------------------------------------ |
-| `APIKeyError`           | Missing or invalid API key                       |
-| `APIQuotaError`         | API quota exceeded                               |
-| `AllKeysExhaustedError` | All API keys have reached their quota limits     |
-| `APIConnectionError`    | Connection issues with the API                   |
-| `CineSleuthError`       | General application errors                       |
+| Error                   | Description                                  |
+| ----------------------- | -------------------------------------------- |
+| `APIKeyError`           | Missing or invalid API key                   |
+| `APIQuotaError`         | API quota exceeded                           |
+| `AllKeysExhaustedError` | All API keys have reached their quota limits |
+| `APIConnectionError`    | Connection issues with the API               |
+| `CineSleuthError`       | General application errors                   |
 
 ## 🔄 Automatic API Key Rotation
 
