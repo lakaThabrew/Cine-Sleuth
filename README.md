@@ -59,8 +59,21 @@ An AI-powered movie guessing game that uses Google's Gemini API to guess the mov
    Create a `.env` file in the project root:
 
    ```
-   GEMINI_API_KEY=your_api_key_here
+   GEMINI_API_KEY=your_primary_api_key_here
    ```
+
+   **Optional: Add backup API keys for automatic failover**
+   
+   If your primary key's quota is exceeded, CineSleuth will automatically switch to backup keys:
+   
+   ```
+   GEMINI_API_KEY=your_primary_api_key
+   GEMINI_API_KEY_2=your_backup_key_2
+   GEMINI_API_KEY_3=your_backup_key_3
+   GEMINI_API_KEY_4=your_backup_key_4
+   ```
+   
+   You can add up to 9 API keys (GEMINI_API_KEY through GEMINI_API_KEY_9).
 
 ## 🎮 Usage
 
@@ -120,12 +133,22 @@ CineSleuth/
 
 The application handles various error scenarios:
 
-| Error                | Description                    |
-| -------------------- | ------------------------------ |
-| `APIKeyError`        | Missing or invalid API key     |
-| `APIQuotaError`      | API quota exceeded             |
-| `APIConnectionError` | Connection issues with the API |
-| `CineSleuthError`    | General application errors     |
+| Error                   | Description                                      |
+| ----------------------- | ------------------------------------------------ |
+| `APIKeyError`           | Missing or invalid API key                       |
+| `APIQuotaError`         | API quota exceeded                               |
+| `AllKeysExhaustedError` | All API keys have reached their quota limits     |
+| `APIConnectionError`    | Connection issues with the API                   |
+| `CineSleuthError`       | General application errors                       |
+
+## 🔄 Automatic API Key Rotation
+
+CineSleuth includes built-in API key rotation:
+
+- When a key's quota is exceeded, it automatically switches to the next available key
+- Displays which key is being used and when switching occurs
+- Continues the game seamlessly without losing progress
+- Supports up to 9 API keys
 
 ## 🎯 Game Tips
 
