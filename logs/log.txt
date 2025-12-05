@@ -13,3 +13,85 @@ Q: Is the character's plant-based power connected to Groot or other Guardians of
 Q: Is the main character male? A: yes
 Q: Is the film Black Panther? A: yes
 Q: Black Panther A: yes
+==================================================
+Date: 2025-12-05 21:49:17
+Movie: Ocean's Eleven
+Result: AI Won
+Questions Asked: 7
+------------------------------
+Q: Is the movie primarily live-action, animated, or a combination of both?
+A: live action
+
+Q: Is the movie primarily a comedy, drama, action, horror, or science fiction film (or a combination of these)?
+A: crime and comedy
+
+Q: Is the movie set primarily in the United States?
+A: yes
+
+Q: Does the movie involve any heists or robberies?
+A: yes
+
+Q: Was the movie released before the year 2000?
+A: just after 2000
+
+Q: Is the movie's main character primarily known for being intelligent or cunning?
+A: yes
+
+Q: Does the movie have a sequel or is part of a larger franchise?
+A: yes, it has sequels
+
+
+==================================================
+Date: 2025-12-05 21:56:42
+Movie: The Planet of the Apes
+Result: AI Won
+Questions Asked: 16
+------------------------------
+Q: Is this movie primarily live-action, animated, or a combination of both?
+A: live action
+
+Q: Is this movie primarily a drama, comedy, action, or science fiction film?
+A: action and scifi
+
+Q: Does this movie take place primarily on Earth, in space, or on another planet?
+A: yes on earth
+
+Q: Does the movie feature superheroes or advanced technology as a core element of the plot?
+A: no
+
+Q: Does the film involve time travel or alternate realities?
+A: no
+
+Q: Is the main character a male or a female?
+A: male
+
+Q: Is the main character primarily fighting against humans, creatures, or robots?
+A: against humans
+
+Q: Is this movie part of a larger franchise, or is it a standalone film?
+A: franchise
+
+Q: Does the franchise have more than 5 movies?
+A: reboot version has 4 films
+
+Q: Is the setting of the film a dystopian future?
+A: yes
+
+Q: Is the franchise primarily known for its vehicular combat and desert landscapes?
+A: no
+
+Q: Does the dystopian setting involve societal control through surveillance or mind control?
+A: no
+
+Q: Is the movie set in a world ravaged by nuclear war or some other global catastrophe?
+A: some disease
+
+Q: Are the humans the main character is fighting against, former humans infected with the disease?
+A: no
+
+Q: Does the disease cause a societal collapse, leaving pockets of uninfected humans fighting for survival?
+A: yes
+
+Q: Is the primary threat in the movie military personnel?
+A: some sort of
+
