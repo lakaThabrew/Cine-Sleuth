@@ -4,19 +4,12 @@ from dotenv import load_dotenv
 import google.generativeai as genai
 from google.api_core import exceptions as google_exceptions
 
-
 class CineSleuthError(Exception):
     pass
-
-
 class APIKeyError(CineSleuthError):
     pass
-
-
 class APIConnectionError(CineSleuthError):
     pass
-
-
 class APIQuotaError(CineSleuthError):
     pass
 
@@ -47,7 +40,6 @@ def get_yes_no_input(prompt="Please answer 'yes' or 'no' (or type 'exit' to quit
             print("\n")
             return 'exit'
 
-
 def load_api_key():
     load_dotenv()
     api_key = os.getenv("GEMINI_API_KEY")
@@ -55,20 +47,17 @@ def load_api_key():
         raise APIKeyError("GEMINI_API_KEY environment variable not set. Please set it in your .env file.")
     return api_key
 
-
 def configure_api(api_key):
     try:
         genai.configure(api_key=api_key)
     except Exception as e:
         raise APIConnectionError(f"Failed to configure API: {e}")
 
-
 def create_model(model_name='gemini-2.0-flash'):
     try:
         return genai.GenerativeModel(model_name)
     except Exception as e:
         raise APIConnectionError(f"Failed to create model '{model_name}': {e}")
-
 
 def send_message_safely(chat, prompt):
     try:
@@ -91,10 +80,13 @@ def print_banner():
     print("|" + " "*23 + "Welcome to Cine-Sleuth!" + " "*22 + "|")
     print("|" + " "*20 + "Your AI-powered movie detector" + " "*18 + "|")
     print("+" + "-"*68 + "+")
-    print("""\n
-        I will ask up to 20 questions to guess 🙃 the movie you're thinking of🎯.
+    print("""\nI will ask up to 20 questions to guess 🙃 the movie you're thinking of🎯.
       """)
 
+def write_history(movie, history):
+    with open("history.txt",'a') as f:
+        summary = "\n".join([f"Q: {q} A: {a}" for q, a in history])
+        f.write(f"{movie} => \nsummary")
 
 def main():
     try:
@@ -109,6 +101,7 @@ def main():
 
         model = create_model('gemini-2.0-flash')
         history = []  
+
         max_questions = 20
         chat = model.start_chat(history=[])
 
@@ -167,6 +160,7 @@ def main():
                     print("🎉 I guessed it! Thanks for playing!")
                     print("👋Bye .... Thanks for playing!")
                     print(summary)
+                    write_history(guess, history)
                     break           
                     
                 else:
@@ -181,6 +175,7 @@ def main():
             final_resp = send_message_safely(chat, prompt)
             print("\nAI Response:", clean_output(final_resp.text))
             print("👋Bye .... Thanks for playing!")
+            write_history(final_movie, history)
 
     except APIKeyError as e:
         print(f"❌ API Key Error: {e}")
