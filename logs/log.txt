@@ -1,0 +1,15 @@
+Date and Time: 2025-12-05 20:18:20
+
+Black Panther => 
+Q: Is the film primarily a comedy or drama? A: no comedy or drma
+Q: Is the film primarily action, science fiction, or horror? A: yes action and scifi
+Q: Does the film involve space travel or exploration? A: no
+Q: Does the film take place primarily on Earth? A: yes
+Q: Does the film involve time travel? A: no
+Q: Does the movie feature prominently any superhuman abilities or powers? A: yes
+Q: Is the film part of the Marvel Cinematic Universe (MCU)? A: yes
+Q: Is the main character's power derived from technology or is it naturally occurring? A: by a plant
+Q: Is the character's plant-based power connected to Groot or other Guardians of the Galaxy characters? A: no
+Q: Is the main character male? A: yes
+Q: Is the film Black Panther? A: yes
+Q: Black Panther A: yes
