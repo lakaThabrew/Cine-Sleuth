@@ -333,7 +333,6 @@ class CineSleuthGUI:
         self.answer_entry.focus()
     
     def submit_answer(self):
-        """Submit the answer from the input field"""
         answer = self.answer_entry.get().strip()
         if not answer:
             return
@@ -406,8 +405,39 @@ class CineSleuthGUI:
         movie = self._ask_for_movie()
         if movie:
             self.add_message(f"The movie was: {movie}", "user")
-            self.save_history(movie, won=False)
-        
+            
+            # Get AI explanation
+            self.update_status("AI is explaining...")
+            threading.Thread(target=lambda: self._get_explanation(movie), daemon=True).start()
+        else:
+            self.end_game()
+    
+    def _get_explanation(self, movie):
+        """Get AI explanation for why it couldn't guess the movie"""
+        try:
+            summary = "\n".join([f"Q: {q} A: {a}" for q, a in self.history])
+            prompt = f"""
+                The Movie is {movie}. Explain why you could not guess it based on the Q&A history.
+                If the user's answers don't match the actual movie details, point that out politely.
+                Keep your response brief (2-3 sentences).
+                Q&A History:
+                {summary}
+            """
+            
+            response = self.chat.send_message(prompt)
+            explanation = clean_output(response.text)
+            
+            self.root.after(0, lambda: self._show_explanation(movie, explanation))
+            
+        except Exception as e:
+            self.root.after(0, lambda: self.add_message(f"Could not get explanation: {e}", "error"))
+            self.root.after(0, self.end_game)
+    
+    def _show_explanation(self, movie, explanation):
+        self.add_message(f"🤖 {explanation}", "ai")
+        self.history.append(("Final Movie", movie))
+        self.history.append(("AI Explanation", explanation))
+        self.save_history(movie, won=False, explanation=explanation)
         self.end_game()
     
     def _ask_for_movie(self):
@@ -453,7 +483,7 @@ class CineSleuthGUI:
         self.root.wait_window(dialog)
         return result[0]
     
-    def save_history(self, movie, won):
+    def save_history(self, movie, won, explanation=None):
         try:
             log_dir = os.path.join(os.path.dirname(__file__), "logs")
             os.makedirs(log_dir, exist_ok=True)
