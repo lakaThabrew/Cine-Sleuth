@@ -95,3 +95,162 @@ A: yes
 Q: Is the primary threat in the movie military personnel?
 A: some sort of
 
+
+==================================================
+Date: 2025-12-06 17:29:30
+Movie: mission impossible
+Result: Player Won
+Questions Asked: 20
+------------------------------
+Q: Is this movie primarily live-action, animated, or a combination of both?
+A: live action
+
+Q: Is this movie primarily a drama, comedy, action, horror, or science fiction film?
+A: action and thriller
+
+Q: Does the movie take place primarily in a realistic, contemporary setting?
+A: yes
+
+Q: Does the film feature a male lead character?
+A: yes
+
+Q: Was the movie released after the year 2000?
+A: before
+
+Q: Is the main character a police officer or detective?
+A: no agent
+
+Q: Does the movie involve a heist or robbery as a central plot element?
+A: yes
+
+Q: Is the film primarily set in the United States?
+A: yes
+
+Q: Is the main character primarily motivated by money, revenge, or something else?
+A: no
+
+Q: Does the film have a sequel?
+A: yes
+
+Q: Is the sequel a direct continuation of the original story, or is it more of a remake or reboot?
+A: direct contribution
+
+Q: Is the main character a criminal mastermind or a more ordinary person who gets caught up in a heist?
+A: no agent
+
+Q: Does the movie involve a significant amount of car chases or other vehicle-based action?
+A: yes
+
+Q: Is the film known for its practical effects and stunts, or does it rely more heavily on CGI?
+A: practical effects and stunts
+
+Q: Does the film star Steve McQueen?
+A: no
+
+Q: Okay, based on all the previous answers, is the movie "Bullitt" (1968)?
+A: no
+
+Q: Is the film "Ronin" (1998)?
+A: no
+
+Q: Is the main character involved in the world of organized crime?
+A: no
+
+Q: Is the film "The Driver" (1978)?
+A: no
+
+Q: Since I have only one question left and I'm not confident, let me ask one clarifying question: Does the movie feature a significant surfing or extreme sports element?
+A: no
+
+
+==================================================
+Date: 2025-12-06 17:38:42
+Movie: The Fast and the Furious
+Result: AI Won
+Questions Asked: 9
+------------------------------
+Q: Is the film primarily live-action, animated, or a combination of both?
+A: live action
+
+Q: Was the movie released before the year 2000?
+A: just after 2000
+
+Q: Is the film primarily set in the present day, the future, or the past?
+A: present
+
+Q: Is the movie primarily a comedy, action, drama, or horror film?
+A: action and crime
+
+Q: Does the film take place primarily in the United States?
+A: yes
+
+Q: Does the movie involve a significant heist or robbery as a core plot element?
+A: some sort of heist
+
+Q: Does the film have a male lead?
+A: yes
+
+Q: Is the movie part of a franchise or is it a standalone film?
+A: franchise
+
+Q: Does the franchise primarily involve cars and racing?
+A: yes
+
+
+==================================================
+Date: 2025-12-06 17:44:47
+Movie: Zodiac
+Result: AI Won
+Questions Asked: 17
+------------------------------
+Q: Is the movie primarily live-action, animated, or a combination of both?
+A: live action
+
+Q: Was the movie released before 2000?
+A: after 2000
+
+Q: Is the movie part of a franchise?
+A: no standalone
+
+Q: Is the movie primarily science fiction or fantasy?
+A: no
+
+Q: Is the movie primarily a comedy?
+A: no
+
+Q: Does the movie primarily take place in the United States?
+A: yes
+
+Q: Is the main character male?
+A: yes
+
+Q: Is the movie primarily a thriller or a drama?
+A: thriller and crime
+
+Q: Does the movie involve a significant amount of mystery or suspense?
+A: some sort of
+
+Q: Does the movie involve law enforcement or legal proceedings?
+A: yes
+
+Q: Is the main character a police officer or detective?
+A: detective
+
+Q: Does the movie take place in a major city like New York or Los Angeles?
+A: yes
+
+Q: Was the movie released in the last 10 years? (2014-2024)
+A: no
+
+Q: Is the film known for having a particularly dark or gritty tone?
+A: yes
+
+Q: Is the film's plot focused on a serial killer?
+A: yes
+
+Q: Does the movie star Brad Pitt?
+A: no
+
+Q: Does the movie star Jake Gyllenhaal?
+A: yes
+
